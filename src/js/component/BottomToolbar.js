@@ -5,38 +5,20 @@ import styles from './BottomToolbar.css'
 import fetch from 'isomorphic-fetch'
 
 class BottomToolbar extends Component {
-    lottery = () => {
-        window.location.replace("#/lottery")
+    handleJump = () => {
+        const { where } = this.props;
+        if (where == 'home') {
+            window.location.replace("#/lottery")
+        } else {
+            window.location.replace("#/")
+        }
     }
-
-    jumpHome = () => {
-        window.location.replace("#/")
-    }
-
 
     render() {
         const { where } = this.props;
         return (
-            <div className={styles.wrapper} >
-                <div className={styles.buttons}>
-                    <Row className={`${where == 'map' ? styles.hidden : ''}`}>
-                        <Col span={24}>
-                            <Button className={styles['lottery-button']} onClick={this.lottery} size="small">
-                                <FontAwesome name='gift' className={styles['button-icon']} />
-                                抽奖
-                            </Button>
-                        </Col>
-                    </Row>
-
-                    <Row className={`${where == 'map' ? '' : styles.hidden}`}>
-                        <Col span={24}>
-                            <Button className={styles['return-button']} onClick={this.jumpHome} size="small">
-                                <FontAwesome name='reply-all' className={styles['button-icon']} />
-                                返回
-                            </Button>
-                        </Col>
-                    </Row>
-                </div>
+            <div className={styles['fixed-btn-wrapper']} onClick={this.handleJump}>
+                <FontAwesome className={styles['fixed-btn']} name={{ home: 'gift', lottery: 'home' }[where]} />
             </div>
         )
     }

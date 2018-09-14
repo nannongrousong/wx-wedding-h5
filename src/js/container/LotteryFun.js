@@ -6,7 +6,7 @@ const LotteryFun = (props) => {
     return (
         <div>
             <Lottery />
-            <BottomToolbar where="map" />
+            <BottomToolbar where='lottery' />
         </div>
     )
 }

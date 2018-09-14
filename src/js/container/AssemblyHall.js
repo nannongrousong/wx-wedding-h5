@@ -19,7 +19,7 @@ class AssemblyHall extends Component {
         })
     }
 
-    sendBarrage = (text) => {        
+    sendBarrage = (text) => {
         this.setState({
             barrageText: text
         })
@@ -28,8 +28,8 @@ class AssemblyHall extends Component {
     render() {
         return (
             <div>
-                <BarrageTB newBarrageText={this.state.barrageText} />
-                <BottomToolbar switchShow={this.switchShow} sendBarrage={this.sendBarrage} />
+                <BarrageTB />
+                <BottomToolbar where='home' />
                 <MainContent />
                 <TopInfo showInfo={this.state.showInfo} switchShow={this.switchShow} />
             </div>
