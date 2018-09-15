@@ -33,7 +33,9 @@ class BarrageTB extends Component {
         this.state = {
             barrageList: []
         }
-        this.barragepresentTop = 60;
+        this.barragePresentTop = 60;
+        this.barragePresentLeft = document.body.clientWidth;
+        this.barrageShowTime = 15;
     }
 
     componentDidMount() {
@@ -67,22 +69,29 @@ class BarrageTB extends Component {
                 let barrageList = res.data;
                 let showBarrageList = [];
 
+                //  重置位置
+                this.barragePresentLeft = document.body.clientWidth;
+                this.barrageShowTime = 15;
+
                 barrageList.forEach((barrage) => {
                     const { barrage_id, portrait_url, text } = barrage;
-                    showBarrageList.push({                        
+                    showBarrageList.push({
                         barrageID: barrage_id,
                         text,
                         bgColor: getBarrageColor()[0],
                         textColor: getBarrageColor()[1],
-                        top: getBestTop(this.barragepresentTop),
-                        left: document.body.clientWidth,
-                        portraitUrl: portrait_url
+                        top: getBestTop(this.barragePresentTop),
+                        left: this.barragePresentLeft,
+                        portraitUrl: portrait_url,
+                        showTime: this.barrageShowTime
                     })
-                    this.barragepresentTop += 40
+                    this.barragePresentTop += 40;
+                    this.barragePresentLeft += 40;
+                    this.barrageShowTime += 0.25;
                 })
 
                 this.setState({
-                    barrageList: showBarrageList
+                    barrageList: [...this.state.barrageList, ...showBarrageList]
                 }, () => {
                     //  记录下最后一个弹幕时间，以供下次查询携带参数
                     if (barrageList.length > 0) {
@@ -92,38 +101,15 @@ class BarrageTB extends Component {
             })
     }
 
-
-    getBarrage = (data) => {
-        let { barrageList } = this.state;
-        barrageList.push({
-            barrageID: data.barrageID,
-            text: data.text,
-            bgColor: getBarrageColor()[0],
-            textColor: getBarrageColor()[1],
-            top: getBestTop(this.presentTop),
-            left: document.body.clientWidth,
-            portraitUrl: data.portraitUrl
-        });
-        //  弹幕高度相隔60
-        this.presentTop += 60;
-        this.setState({ barrageList })
-    }
-
     render() {
         return (
             <div className={styles.wrapper}>
                 {
-                    this.state.barrageList.map((barrange) => {
+                    this.state.barrageList.map((barrage) => {
                         return <Barrage
-                            id={barrange.barrageID}
-                            key={barrange.barrageID}
-                            text={barrange.text}
-                            top={barrange.top}
-                            left={barrange.left}
-                            bgColor={barrange.bgColor}
-                            textColor={barrange.textColor}
-                            portraitUrl={barrange.portraitUrl}
+                            key={barrage.barrageID}
                             removeBarrage={this.removeBarrage}
+                            {...barrage}
                         />
                     })
                 }

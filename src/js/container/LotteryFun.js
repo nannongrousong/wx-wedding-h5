@@ -1,13 +1,13 @@
-import React from 'react'
-import Lottery from '@Component/Lottery'
+import React, { Fragment } from 'react'
+import LotteryUser from '@Component/LotteryUser'
 import BottomToolbar from '@Component/BottomToolbar'
 
 const LotteryFun = (props) => {
     return (
-        <div>
-            <Lottery />
+        <Fragment>
+            <LotteryUser />
             <BottomToolbar where='lottery' />
-        </div>
+        </Fragment>
     )
 }
 

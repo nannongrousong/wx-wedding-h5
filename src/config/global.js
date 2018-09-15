@@ -5,7 +5,8 @@ const onlineApiPrefix = '';
 const getApiUrl = () => {
   const apiPrefix = isDebug ? debugApiPrefix : onlineApiPrefix;
   return {
-    LIST_BARRAGE: apiPrefix + '/barrage'
+    LIST_BARRAGE: apiPrefix + '/barrage',
+    LIST_SIGN_RECORD: apiPrefix + '/sign/all'
   }
 }
 

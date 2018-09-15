@@ -8,7 +8,7 @@
 
 @media screen and (min-width: 500px) {    
     .barrage {
-        transition: transform 10s linear;
+        transition: transform 15s linear;
     }
 }
 

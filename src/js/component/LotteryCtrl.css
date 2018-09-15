@@ -26,7 +26,6 @@
     box-shadow: 0 0 5px #888888;
     border-radius: 50%;
     z-index: 200;
-    box-sizing: border-box;
     transform-origin: 50% 50%;
 }
 

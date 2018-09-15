@@ -13,25 +13,27 @@ class Barrage extends Component {
     }
 
     componentDidMount() {
-        let initLeft = this.props.left;
-        let xEnd = (initLeft + 400) * -1;
+        let { left, showTime } = this.props;
+        let xEnd = (left + 400) * -1;
 
         const tempTimeID = setTimeout(() => {
             clearTimeout(tempTimeID);
             this.setState({
-                transform: `translateX(${xEnd}px)`
+                transform: `translateX(${xEnd}px)`,
+                transition: `transform ${showTime}s linear`
             })
         }, 10);
     }
 
     barrageEnd = () => {
-        this.props.removeBarrage(this.props.id);
+        this.props.removeBarrage(this.props.barrageID);
     }
 
     render() {
         const { left, top } = this.props;
+        const { transform, transition } = this.state;
         return (<div
-            style={{ left, top, transform: this.state.transform }}
+            style={{ left, top, transform, transition }}
             className={styles.barrage}
             onTransitionEnd={this.barrageEnd} >
             <img className={styles.portrait} src={this.props.portraitUrl} />

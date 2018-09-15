@@ -4,18 +4,29 @@ html, body {
     overflow: hidden;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
 body {
     background-color: #f1f1f1;
 }
 
-#root {
-    height: 100%;
+:global{
+    #root {
+        height: 100%;
+    }
 }
 
-.hidden {
-    display: none;
+:global {
+    .hidden {
+        display: none;
+    }
 }
 
 * {
-    font-family: '微软雅黑'
+    font-family: '微软雅黑';
+    box-sizing: border-box;
 }

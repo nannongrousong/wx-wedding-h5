@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import ReactDOM from 'react-dom'
 import { HashRouter, Switch, Route } from 'react-router-dom'
 import AssemblyHall from '@Container/AssemblyHall'
@@ -9,13 +9,13 @@ import '../styles/index.css'
 
 const App = (props) => {
     return (
-        <div>
+        <Fragment>
             <BGMusic />
             <Switch>
                 <Route exact path='/' component={AssemblyHall} />
                 <Route path="/lottery" component={LotteryFun} />
             </Switch>
-        </div>
+        </Fragment>
     )
 }
 

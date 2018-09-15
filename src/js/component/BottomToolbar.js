@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import { Button, Row, Col } from 'antd';
 import FontAwesome from 'react-fontawesome';
 import styles from './BottomToolbar.css'
-import fetch from 'isomorphic-fetch'
 
 class BottomToolbar extends Component {
     handleJump = () => {
