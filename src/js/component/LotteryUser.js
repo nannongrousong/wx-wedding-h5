@@ -56,6 +56,13 @@ class LotteryUser extends Component {
         }
     }
 
+    clearRes = (e) => {
+        e.preventDefault();
+        this.setState({
+            resultUsers: []
+        })
+    }
+
     render() {
         const { resultUsers, lotteryingUser, lotteryState } = this.state;
         return (
@@ -81,12 +88,9 @@ class LotteryUser extends Component {
                                 ))
                             }
                         </ul>
-                        {
-                            false &&
-                            <div className={styles['result-btn']}>
-                                <a href='#'>中奖人</a>
-                            </div>
-                        }
+                        <div className={styles['result-btn']}>
+                            <a href='#' onClick={this.clearRes}>清空</a>
+                        </div>
                     </div>
                 </div>
             </div>
