@@ -4,21 +4,24 @@ import styles from './BottomToolbar.css'
 
 class BottomToolbar extends Component {
     handleJump = () => {
-        const { where } = this.props;
-        if (where == 'home') {
-            window.location.replace("#/lottery")
-        } else if (where == 'wall') {
-            window.location.replace("#/lottery")
-        } else {
+        const { des } = this.props;
+        if (des == 'home') {
             window.location.replace("#/")
+        } else if (des == 'wall') {
+            window.location.replace("#/wall")
+        } else if (des == 'lottery') {
+            window.location.replace("#/lottery")
         }
     }
 
     render() {
-        const { where } = this.props;
-        let name = { home: 'gift', lottery: 'home', wall: 'gift' }[where];
+        const { des, right } = this.props;
+        let name = { home: 'home', lottery: 'gift', wall: 'gift' }[des];
+        let myStyle = right ? {
+            right
+        } : null;
         return (
-            <div className={styles['fixed-btn-wrapper']} onClick={this.handleJump}>
+            <div className={styles['fixed-btn-wrapper']} onClick={this.handleJump} style={myStyle}>
                 <FontAwesome className={styles['fixed-btn']} name={name} />
             </div>
         )

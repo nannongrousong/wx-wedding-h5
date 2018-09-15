@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import PictureWall from '@Component/PictureWall'
+import PictureWall from '@Component/PictureWall2'
 import BottomToolbar from '@Component/BottomToolbar'
 
 export default class extends Component {
@@ -7,7 +7,7 @@ export default class extends Component {
         return (
             <Fragment>
                 <PictureWall />
-                <BottomToolbar where='wall' />
+                <BottomToolbar des='lottery' />
             </Fragment>
         );
     }

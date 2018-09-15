@@ -6,7 +6,8 @@ const LotteryFun = (props) => {
     return (
         <Fragment>
             <LotteryUser />
-            <BottomToolbar where='lottery' />
+            <BottomToolbar des='wall' right='120px' />
+            <BottomToolbar des='home' />
         </Fragment>
     )
 }

@@ -29,7 +29,7 @@ class AssemblyHall extends Component {
         return (
             <div>
                 <BarrageTB />
-                <BottomToolbar where='home' />
+                <BottomToolbar des='lottery' />
                 <MainContent />
                 <TopInfo showInfo={this.state.showInfo} switchShow={this.switchShow} />
             </div>

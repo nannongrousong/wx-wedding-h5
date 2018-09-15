@@ -15,8 +15,7 @@ const App = (props) => {
             <Switch>
                 <Route exact path='/' component={AssemblyHall} />
                 <Route path="/lottery" component={LotteryFun} />
-                <Route path="/wall" component={PictureWall} />
-                
+                <Route path="/wall" component={PictureWall} />                
             </Switch>
         </Fragment>
     )

@@ -18,6 +18,20 @@
     z-index: 1000;
 }
 
+.fixed-btn-wrapper:hover {
+    animation: circle 5s infinite linear;
+}
+
+@keyframes circle {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
 .fixed-btn {
     display: table-cell;
     vertical-align: middle;
