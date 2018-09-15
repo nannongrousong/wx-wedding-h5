@@ -7,6 +7,8 @@ class BottomToolbar extends Component {
         const { where } = this.props;
         if (where == 'home') {
             window.location.replace("#/lottery")
+        } else if (where == 'wall') {
+            window.location.replace("#/lottery")
         } else {
             window.location.replace("#/")
         }
@@ -14,9 +16,10 @@ class BottomToolbar extends Component {
 
     render() {
         const { where } = this.props;
+        let name = { home: 'gift', lottery: 'home', wall: 'gift' }[where];
         return (
             <div className={styles['fixed-btn-wrapper']} onClick={this.handleJump}>
-                <FontAwesome className={styles['fixed-btn']} name={{ home: 'gift', lottery: 'home' }[where]} />
+                <FontAwesome className={styles['fixed-btn']} name={name} />
             </div>
         )
     }

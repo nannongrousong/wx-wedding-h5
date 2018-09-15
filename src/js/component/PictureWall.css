@@ -1,0 +1,20 @@
+.wrapper {
+    padding: 80px;
+}
+
+.item {
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #FFF;
+    margin: 10px;
+    display: inline-block;
+}
+
+.item:hover {
+    box-shadow: 15px 15px 20px rgba(50, 50, 50, 0.4);
+    transform: rotate(0deg) scale(1.30) !important;
+}
+
+.img {
+    width: 160px;
+}
