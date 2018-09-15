@@ -2,21 +2,15 @@ import React, { Component } from 'react'
 import styles from './MainContent.css'
 
 class MainContent extends Component {
-    constructor() {        
+    constructor() {
         super();
         let width = document.body.clientWidth;
         let imgs = [];
-        for (let i = 0; i < 10; i++) {
-            try {
-                let tmp = undefined;
-                if(width > 500) {
-                    tmp = require(`../../images/width${i}.jpg`);
-                } else {
-                    tmp = require(`../../images/${i}.jpg`);
-                }                
-                tmp && imgs.push(tmp);
-            } catch (e) {
-                continue; 
+        for (let i = 0; i < 4; i++) {
+            if (width > 500) {
+                imgs.push(`https://nannongrousong-app-private.oss-cn-shanghai.aliyuncs.com/wedding/background-wide-${i}.jpg`);
+            } else {
+                imgs.push(`https://nannongrousong-app-private.oss-cn-shanghai.aliyuncs.com/wedding/background-${i}.jpg`);
             }
         }
         this.imgs = imgs.slice();
