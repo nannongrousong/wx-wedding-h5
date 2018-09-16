@@ -14,7 +14,7 @@ class LotteryUser extends Component {
         lotteryingUser: {
             user_id: 'default',
             nick_name: '会是谁呢',
-            portrait_url: 'https://nannongrousong-app-private.oss-cn-shanghai.aliyuncs.com/wedding/default-portrait.jpg'
+            portrait_url: 'https://cdn.nannongrousong.xin/wedding/h5/static/default-portrait.jpg'
         }
     }
 
@@ -70,7 +70,7 @@ class LotteryUser extends Component {
                 <div className={styles['lottery-wrapper']}>
                     <div className={styles['layout-left']}>
                         <div className={styles['lottery-user']}>
-                            <img src={lotteryingUser.portrait_url} />
+                            <img src={lotteryingUser.portrait_url} alt={lotteryingUser.nick_name} />
                             <span className={styles['lottery-name']}>{lotteryingUser.nick_name}</span>
                         </div>
                         <div className={styles['start-btn']} onClick={this.controlLottery}>
@@ -83,7 +83,7 @@ class LotteryUser extends Component {
                             {
                                 resultUsers.map((result, index) => (
                                     <li key={index} className={styles['result-item']}>
-                                        <img className={styles['result-item-portrait']} src={`${result.portrait_url}`}></img>
+                                        <img className={styles['result-item-portrait']} src={`${result.portrait_url}`} alt={result.nick_name} ></img>
                                         <span className={styles['result-item-name']}>{result.nick_name}</span>
                                     </li>
                                 ))

@@ -59,7 +59,7 @@ class BarrageTB extends Component {
 
     loadBarrageList = () => {
         let lastST = localStorage.getItem('lastST') || '';
-        fetch(`${apiUrl.LIST_BARRAGE}?lastST=${lastST}`)
+        fetch(`${apiUrl.LIST_BARRAGE}?lastST=${lastST}&_=${new Date().getTime()}`)
             .then((res) => res.json())
             .then((res) => {
                 if (!res.code) {

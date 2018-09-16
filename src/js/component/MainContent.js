@@ -8,9 +8,9 @@ class MainContent extends Component {
         let imgs = [];
         for (let i = 0; i < 4; i++) {
             if (width > 500) {
-                imgs.push(`https://nannongrousong-app-private.oss-cn-shanghai.aliyuncs.com/wedding/background-wide-${i}.jpg`);
+                imgs.push(require(`../../images/background-wide-${i}.jpg`));
             } else {
-                imgs.push(`https://nannongrousong-app-private.oss-cn-shanghai.aliyuncs.com/wedding/background-${i}.jpg`);
+                imgs.push(require(`../../images/background-${i}.jpg`));
             }
         }
         this.imgs = imgs.slice();

@@ -28,7 +28,7 @@ module.exports = {
     output: {
         path: path.resolve('dist'),
         filename: 'static/bundle-[hash:8].js',
-        publicPath: 'https://cdn.nannongrousong/wedding/h5',
+        publicPath: 'https://cdn.nannongrousong.xin/wedding/h5',
     },
     module: {
         rules: [
@@ -40,7 +40,7 @@ module.exports = {
                         loader: require.resolve('url-loader'),
                         options: {
                             limit: 8192,
-                            name: 'static/[name].[ext]',
+                            name: '/static/[name].[ext]',
                         }
                     },
                     {
@@ -90,7 +90,7 @@ module.exports = {
                         exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/],
                         loader: require.resolve('file-loader'),
                         options: {
-                            name: 'static/[name].[ext]',
+                            name: '/static/[name].[ext]',
                         },
                     }
                 ]

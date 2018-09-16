@@ -37,7 +37,7 @@ class PictureWall extends Component {
                 {
                     signUsers.map((user) => (
                         <div key={user.user_id} className={styles.item} style={{transform: `rotate(${user.rotate}deg)`}}>
-                            <img src={user.portrait_url} className={styles.img} />
+                            <img src={user.portrait_url} alt={user.nick_name} className={styles.img} />
                         </div>
                     ))
                 }
