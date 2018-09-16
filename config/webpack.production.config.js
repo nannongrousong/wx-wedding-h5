@@ -8,8 +8,8 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
 
 //  保证自定义样式覆盖依赖库（如antd-mobile）旧样式
-const commonExtractCss = new ExtractTextPlugin('./static/common-[hash:8].css')
-const styleExtractCss = new ExtractTextPlugin('./static/style-[hash:8].css')
+const commonExtractCss = new ExtractTextPlugin('static/common-[hash:8].css')
+const styleExtractCss = new ExtractTextPlugin('static/style-[hash:8].css')
 
 module.exports = {
     mode: 'production',
@@ -27,8 +27,8 @@ module.exports = {
     entry: path.resolve('src/js/index.js'),
     output: {
         path: path.resolve('dist'),
-        filename: './bundle-[hash:8].js',
-        publicPath: './',
+        filename: 'static/bundle-[hash:8].js',
+        publicPath: 'https://cdn.nannongrousong/wedding/h5',
     },
     module: {
         rules: [
