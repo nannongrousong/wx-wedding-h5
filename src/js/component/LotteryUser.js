@@ -14,7 +14,7 @@ class LotteryUser extends Component {
         lotteryingUser: {
             user_id: 'default',
             nick_name: '会是谁呢',
-            portrait_url: 'https://cdn.nannongrousong.xin/wedding/h5/static/default-portrait.jpg'
+            portrait_url: 'https://nannongrousong.xin/wedding/h5/static/default-portrait.jpg'
         }
     }
 
