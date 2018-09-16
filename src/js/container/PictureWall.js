@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PictureWall from '@Component/PictureWall'
-import BottomToolbar from '@Component/BottomToolbar'
+import BottomAnchor from '@Component/BottomAnchor'
 
 export default class extends Component {
     componentDidMount() {
@@ -23,7 +23,7 @@ export default class extends Component {
         return (
             <Fragment>
                 <PictureWall />
-                <BottomToolbar des='lottery' />
+                <BottomAnchor anchors={['lottery']} />
             </Fragment>
         );
     }

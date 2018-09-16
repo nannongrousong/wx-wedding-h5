@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import TopInfo from '@Component/TopInfo'
 import BarrageTB from '@Component/BarrageTB'
-import BottomToolbar from '@Component/BottomToolbar'
+import BottomAnchor from '@Component/BottomAnchor'
 import MainContent from '@Component/MainContent'
 
 class AssemblyHall extends Component {
@@ -29,7 +29,7 @@ class AssemblyHall extends Component {
         return (
             <div>
                 <BarrageTB />
-                <BottomToolbar des='lottery' />
+                <BottomAnchor anchors={['lottery']}  />
                 <MainContent />
                 <TopInfo showInfo={this.state.showInfo} switchShow={this.switchShow} />
             </div>

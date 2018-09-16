@@ -1,4 +1,4 @@
-const isDebug = true;
+const isDebug = false;
 const debugApiPrefix = 'http://localhost:81';
 const onlineApiPrefix = 'https://nannongrousong.xin/wedding/api';
 

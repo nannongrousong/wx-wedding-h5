@@ -68,29 +68,28 @@ class LotteryUser extends Component {
         return (
             <div className={styles.background}>
                 <div className={styles['lottery-wrapper']}>
-                    <div className={styles['lottery-user']}>
-                        <div className={styles['lottery-portrait']} style={{ backgroundImage: `url(${lotteryingUser.portrait_url})` }}>
+                    <div className={styles['layout-left']}>
+                        <div className={styles['lottery-user']}>
+                            <img src={lotteryingUser.portrait_url} />
                             <span className={styles['lottery-name']}>{lotteryingUser.nick_name}</span>
                         </div>
+                        <div className={styles['start-btn']} onClick={this.controlLottery}>
+                            {lotteryState ? '停止' : '开始'}
+                        </div>
                     </div>
-                    <div className={styles['start-btn-wrapper']}>
-                        <a href='#' className={styles['start-btn']} onClick={this.controlLottery}>{lotteryState ? '停止' : '开始'}</a>
-                    </div>
-                    <div className={styles['result']}>
+                    <div className={styles['layout-right']}>
                         <div className={styles['result-title']}>中奖名单</div>
-                        <ul className={styles['result-list']}>
+                        <div className={styles['result-list']}>
                             {
                                 resultUsers.map((result, index) => (
-                                    <li key={index}>
-                                        <div className={styles['result-item-portrait']} style={{ backgroundImage: `url(${result.portrait_url})` }}></div>
-                                        <div className={styles['result-item-name']}>{result.nick_name}</div>
+                                    <li key={index} className={styles['result-item']}>
+                                        <img className={styles['result-item-portrait']} src={`${result.portrait_url}`}></img>
+                                        <span className={styles['result-item-name']}>{result.nick_name}</span>
                                     </li>
                                 ))
                             }
-                        </ul>
-                        <div className={styles['result-btn']}>
-                            <a href='#' onClick={this.clearRes}>清空</a>
                         </div>
+                        <div className={styles['result-btn']} onClick={this.clearRes}>清空</div>
                     </div>
                 </div>
             </div>

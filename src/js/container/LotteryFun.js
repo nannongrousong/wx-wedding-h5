@@ -1,13 +1,12 @@
 import React, { Fragment } from 'react'
 import LotteryUser from '@Component/LotteryUser'
-import BottomToolbar from '@Component/BottomToolbar'
+import BottomAnchor from '@Component/BottomAnchor'
 
 const LotteryFun = (props) => {
     return (
         <Fragment>
             <LotteryUser />
-            <BottomToolbar des='wall' right='120px' />
-            <BottomToolbar des='home' />
+            <BottomAnchor anchors={['wall', 'home']} />
         </Fragment>
     )
 }
