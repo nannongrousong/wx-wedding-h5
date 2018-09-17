@@ -3,6 +3,7 @@ import Barrage from '@Component/Barrage'
 import styles from './Barrage.css'
 import fetch from 'isomorphic-fetch'
 import { getApiUrl } from '../../config/global';
+import message from '@Common/message';
 
 const apiUrl = getApiUrl();
 

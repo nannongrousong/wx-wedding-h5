@@ -14,7 +14,8 @@ module.exports = {
         alias: {
             '@Config': path.resolve('config'),
             '@Component': path.resolve('src/js/component'),
-            '@Container': path.resolve('src/js/container')
+            '@Container': path.resolve('src/js/container'),
+            '@Common': path.resolve('src/common')
         }
     },
     //  热打包更新

@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
-import { message } from 'antd';
 import fetch from 'isomorphic-fetch'
 import { getApiUrl } from '../../config/global';
-import styles from './PictureWall.css'
+import message from '@Common/message';
 
+import styles from './PictureWall.css'
 const apiUrl = getApiUrl();
 
 class PictureWall extends Component {

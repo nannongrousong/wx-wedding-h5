@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { message } from 'antd';
 import styles from './LotteryUser.css';
 import fetch from 'isomorphic-fetch'
 import { getApiUrl } from '../../config/global';
+import message from '@Common/message';
 
 const apiUrl = getApiUrl();
 

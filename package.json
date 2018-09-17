@@ -12,7 +12,6 @@
   "author": "nannongrousong",
   "license": "ISC",
   "devDependencies": {
-    "antd": "^3.9.2",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-import": "^1.7.0",

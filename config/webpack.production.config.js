@@ -21,7 +21,8 @@ module.exports = {
         alias: {
             '@Config': path.resolve('config'),
             '@Component': path.resolve('src/js/component'),
-            '@Container': path.resolve('src/js/container')
+            '@Container': path.resolve('src/js/container'),
+            '@Common': path.resolve('src/common')
         }
     },
     entry: path.resolve('src/js/index.js'),
